@@ -1,14 +1,12 @@
 using FluentAssertions;
 using Services;
 using TechTalk.SpecFlow;
-using Xunit;
 
 namespace SpecFlow.Specs.Steps
 {
     [Binding]
     public sealed class GreeterStepDefinitions
     {
-
         private readonly ScenarioContext _scenarioContext;
         private string _name;
         private string _actualGreetingMessage;
@@ -22,13 +20,13 @@ namespace SpecFlow.Specs.Steps
         [Given(@"I am ""(.*)""")]
         public void GivenIAm(string name)
         {
-            _name = name; ;
+            _name = name;
+            ;
         }
 
         [When("I use greeter")]
         public void WhenIUseGreeter()
         {
-            //TODO: implement act (action) logic
             var greeter = new Greeter();
 
             _actualGreetingMessage = greeter.Greet(_name);
